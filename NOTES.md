@@ -111,3 +111,11 @@ A máscara de sub-rede é utilizada para indicar na rede quantos bits do endere�
 
 * **`192.168.0`** - Identifica a rede
 * **`.50`** - Identifica o host
+
+#### 🔢 Obtendo a máscara de sub-rede a partir da notação CIDR
+
+O **encaminhamento entre domínios sem classificação (CIDR)** é um padrão que permite os roteadores encaminharem pacotes de dados para os dispositivos com no sufixo CIDR, que representa os bits significativos na máscara de sub-rede. Por exemplo, tome o CIDR **`10.0.0.1/29`**. Nesse caso, temos o endereço **`10.0.0.1`** com os 29 primeiros bits utilizados para identificar a rede.
+
+A partir do número de bits da identificação da rede, podemos obter o número de bits utilizados para identificar o host subtraindo de 32, com 3 bits para endereçamento.
+
+Nesse caso, a máscara de sub-rede é dada por **`255.255.255.248`** **(2³)**.
