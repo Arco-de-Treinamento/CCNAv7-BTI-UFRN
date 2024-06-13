@@ -85,8 +85,29 @@ Redes OSPF são redes ponto a ponto e devem ter as suas interfaces pertencentes 
 network <network-adress> <wildcard-mask> area <area-id>
 ```
 
-Onde **`network-adress`** é o endereço IPv4 e **`wildcard-mask`** é a mascara de rede, sendo **`area-id`** o ID da área.
+Onde **`network-adress`** é o endereço IPv4 e **`wildcard-mask`** é a máscara de rede, sendo **`area-id`** o ID da área.
 
 > A configuração do OSPF também pode ser feita diretamente na interface com o comando **`ip ospf`**.
 
+#### 🎭 A Wildcard Mask
 
+A mascara de rede é normalmente o inverso da máscara de sub-rede configurada numa interface, utilizada no processo para identificar as interfaces que estão participando do OSPF. Por exemplo, caso a máscara de sub-rede seja **`255.255.255.0`**, a wildcard mask é **`0.0.0.255`**.
+
+A wildcard pode ser obtida da através da subtração da máscara de sub-rede por 255.255.255.255:
+
+$$
+\begin{align*}
+255.255.255.255 \\
+- \quad 255.255.255.192 \\
+\hline
+000.000.000.063 \\
+\end{align*}
+$$
+
+
+#### 🎭 Máscara de sub-rede
+
+A máscara de sub-rede é utilizada para indicar na rede quantos bits do endereço ip serão utilizados na identificação da rede, onde os bits restantes identificam os hosts. Por exemplo, para um endereço ip **`192.168.0.50`**, com uma máscara de sub-rede **`255.255.255.0`**, podemos identificar:
+
+* **`192.168.0`** - Identifica a rede
+* **`.50`** - Identifica o host
