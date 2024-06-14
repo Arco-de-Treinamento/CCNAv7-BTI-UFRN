@@ -153,3 +153,15 @@ Uma alternativa ao comando **network** é a configuração do protocolo OSPF na 
 interface <interface-name> 
 ip ospf area <area-id>
 ```
+
+### 📡 Interface passiva
+
+Por padrão, todas as interfaces habilitadas no protocolo OSPF podem receber e enviar mensagens na rede. Essa configuração pode trazer transtornos para a rede uma vez que consome banda desnecessariamente e aumenta os riscos de segurança.
+
+Para mitigar os danos é apropriado habilitar uma interface como passiva em situações que ofereçam mais vulnerabilidade.
+
+```bash
+router ospf <ospf-id>
+passive-interface <interface-name>
+end
+```
