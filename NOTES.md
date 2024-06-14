@@ -177,3 +177,13 @@ Em complemento, ainda é possível configurar todas as interfaces disponíveis c
 ```bash
 passive-interface default
 ```
+
+### 📡 OSPF Ponto-a-Ponto
+
+Em situações onde temos apenas dois roteadores, numa conexão ponto-a-ponto entre R1 e R2, o uso da eleição de um DR e BDR se torna desnecessária. Para otimizar a rede e desativar o processo de eleição de DR/BDR é recomendado configurar interface como ponto-a-ponto:
+
+```bash
+interface <interface-name>
+ip ospf network point-to-point
+end
+```
