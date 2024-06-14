@@ -28,7 +28,7 @@ As configurações do [IOS (Internetwork Operating System®)](https://www.cisco.
 
 Em modo de configuração global execute o seguinte comando:
 
-```
+```bash
 conf t
 router ospf <ospf-id>
 ```
@@ -41,7 +41,7 @@ Ao invés de depender de uma interface física, o ID do roteador pode ser atribu
 
 Em modo de configuração de interface, considerando que o roteador ainda tenha um ID, execute o seguinte comando:
 
-```
+```bash
 interface Loopback 1
 ip address 1.1.1.1 255.255.255.255
 end
@@ -55,7 +55,7 @@ O ID de um roteador é um valor de 32 bits representado com um endereço IPv4. O
 
 Em modo de configuração global, execute o seguinte comando:
 
-```
+```bash
 router ospf <ospf-id>
 router-id 1.1.1.1
 end
@@ -67,7 +67,7 @@ Quando configurado, um roteador OSPF ativo só permite alterar o ID após recarr
 
 Em modo de configuração global, execute o seguinte comando:
 
-```
+```bash
 router ospf <ospf-id>
 router-id 1.1.1.1
 end
@@ -81,13 +81,15 @@ clear ip ospf process
 
 Redes OSPF são redes ponto a ponto e devem ter as suas interfaces pertencentes especificadas. No OSPFv2 essa tarefa é realizada utilizando o comando network, com a sintaxe:
 
-```
+```bash
 network <network-adress> <wildcard-mask> area <area-id>
 ```
 
 Onde **`network-adress`** é o endereço IPv4 e **`wildcard-mask`** é a máscara de rede, sendo **`area-id`** o ID da área.
 
 > A configuração do OSPF também pode ser feita diretamente na interface com o comando **`ip ospf`**.
+
+Observe que a configuração serve para anunciar a rede quais interfaces participarão do OSPF.
 
 #### 🎭 A Wildcard Mask
 
@@ -104,13 +106,12 @@ $$
 \end{align*}
 $$
 
-
 #### 🎭 Máscara de sub-rede
 
 A máscara de sub-rede é utilizada para indicar na rede quantos bits do endereço ip serão utilizados na identificação da rede, onde os bits restantes identificam os hosts. Por exemplo, para um endereço ip **`192.168.0.50`**, com uma máscara de sub-rede **`255.255.255.0`**, podemos identificar:
 
-* **`192.168.0`** - Identifica a rede
-* **`.50`** - Identifica o host
+- **`192.168.0`** - Identifica a rede
+- **`.50`** - Identifica o host
 
 #### 🔢 Obtendo a máscara de sub-rede a partir da notação CIDR
 
@@ -119,3 +120,17 @@ O **encaminhamento entre domínios sem classificação (CIDR)** é um padrão qu
 A partir do número de bits da identificação da rede, podemos obter o número de bits utilizados para identificar o host subtraindo de 32, com 3 bits para endereçamento.
 
 Nesse caso, a máscara de sub-rede é dada por **`255.255.255.248`** **(2³)**.
+
+#### 0️⃣ Máscara Quad Zero
+
+A máscara quad zero é uma alternativa ao uso da máscara wildcard na configuração do OSPF dada por **`0.0.0.0`**. Ao utilizar uma quad zero se perde a necessidade de calcular a wildcard, atribuindo uma interface individual para uma área OSPF, ao invés de um range de interfaces.
+
+```bash
+network <network-adress> 0.0.0.0 area <area-id>
+```
+
+A máscara quad zero também pode ser utilizada em conjunto com uma **all one (255.255.255.255)** para incluir todas as interfaces disponíveis em uma única área, com um único comando. Nesse caso se utiliza a sintaxe:
+
+```bash
+network 0.0.0.0 255.255.255.255 area <area-id>
+```
