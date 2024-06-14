@@ -165,3 +165,15 @@ router ospf <ospf-id>
 passive-interface <interface-name>
 end
 ```
+
+A configuração pode ser revisada com:
+
+```bash
+show ip protocols
+```
+
+Em complemento, ainda é possível configurar todas as interfaces disponíveis como passivas através do comando **default**, com a seguinte sintaxe:
+
+```bash
+passive-interface default
+```
