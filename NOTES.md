@@ -22,6 +22,8 @@ As configurações do [IOS (Internetwork Operating System®)](https://www.cisco.
 
 > Em qualquer um dos modos, para consultar a tabela de aplicações disponíveis, ensira o comando '?'
 
+***
+
 ## 📡 Utilizando e configurando uma Rede OSPFv2
 
 ### 🖥️ Inicializando um processo OSPF
@@ -133,4 +135,12 @@ A máscara quad zero também pode ser utilizada em conjunto com uma **all one (2
 
 ```bash
 network 0.0.0.0 255.255.255.255 area <area-id>
+```
+
+#### ❌ Removendo uma interface do OSPF
+
+A remoção de uma interface do OSPF é feita com o comando **no**, que reverte o comando executado. A sintaxe é semelhante ao comando padrão:
+
+```bash
+no network <network-adress> <wildcard-mask> area <area-id>
 ```
