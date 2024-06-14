@@ -144,3 +144,12 @@ A remoção de uma interface do OSPF é feita com o comando **no**, que reverte 
 ```bash
 no network <network-adress> <wildcard-mask> area <area-id>
 ```
+
+### 📡 Configurando o OSPF diretamente na interface
+
+Uma alternativa ao comando **network** é a configuração do protocolo OSPF na própria interface. Essa configuração pode ser feita diretamente com o comando **ip ospf**, após entrar na interface. Nesse caso, será necessário apenas indicar a **`area-id`**.
+
+```bash
+interface <interface-name> 
+ip ospf area <area-id>
+```
