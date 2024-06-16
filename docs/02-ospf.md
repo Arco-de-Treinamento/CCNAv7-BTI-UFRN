@@ -161,3 +161,14 @@ interface <interface-name>
 ip ospf network point-to-point
 end
 ```
+
+## 📡 Redes OSPF de multiacesso
+
+Outro tipo comum de conexão entre switchs é a rede de multiacesso, do tipo broadcast, onde todos os dispositivos na rede enxergam todas as conexões broadcast.
+
+Em casos como esse, o protocolo OSPF elege um **DR** e um **BDR** para gerenciar a rede e os LSAs (Link-State Advertisements).
+
+> O DR é responsável por coletar e destribuir LSAs na rede. Cao o DR falhe, o BDR irá assumir toda a demanda da rede.
+
+> LSAs são a descrição do estado local de um roteador ou rede, incluindointerfaces e adjacências. Um conjunto de LSAs formam a base de dados topológicas do protocolo.
+
