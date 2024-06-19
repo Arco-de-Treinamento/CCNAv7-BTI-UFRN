@@ -172,3 +172,14 @@ Em casos como esse, o protocolo OSPF elege um **DR** e um **BDR** para gerenciar
 
 > LSAs são a descrição do estado local de um roteador ou rede, incluindointerfaces e adjacências. Um conjunto de LSAs formam a base de dados topológicas do protocolo.
 
+### 📡 Funções de cada Roteador
+
+- **DROUTER:** Um roteador comum na rede;
+- **DR (Designated Router):** Roteador responsável por coletar e distribuir LSAs na rede;
+- **BDR (Backup Designated Router):** Roteador responsável por coletar e distribuir LSAs na rede em caso de falha do DR.
+
+Ambos os estados podem ser visualizados ao acessar as informações da interface atual:
+
+```bash
+show ip osp interface <interface-name>
+```
