@@ -183,3 +183,18 @@ Ambos os estados podem ser visualizados ao acessar as informações da interface
 ```bash
 show ip osp interface <interface-name>
 ```
+
+### 📡 Estados de adjacências
+
+| Estado | Descrição | Ações permitidas |
+| --- | --- | --- |
+| **FULL/DROUTER** | Um roteador DR ou BDR em adjacência completa com algum DROUTER pertencente a rede | Pacotes Hello; atualizações; consultas |
+| **FULL/DR** | Um roteador DROUTER em adjacência completa com um DR pertencente a rede | Pacotes Hello; atualizações; consultas |
+| **FULL/BDR** | Um roteador DROUTER em adjacência completa com um BDR pertencente a rede | Pacotes Hello; atualizações; consultas |
+| **WAY/DROUTER** | Um roteador DROUTER em adjacência com outro roteador DROUTER pertencente a rede | Pacotes Hello |
+
+Cada uma dessas informações pode ser consultada diretamente no roteador com o comando:
+
+```bash
+show ip ospf neighbor
+```
