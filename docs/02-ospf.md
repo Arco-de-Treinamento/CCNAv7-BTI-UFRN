@@ -184,6 +184,19 @@ Ambos os estados podem ser visualizados ao acessar as informações da interface
 show ip osp interface <interface-name>
 ```
 
+### ⚖️ Configuando a prioridade do OSPF
+
+A eleição do DR e BDR ocorre com base na prioridade da interface do roteador e permanece com essas atribuições até que o DR falhe, seja desligado ou tenha o processo OSPF reiniciado.
+
+A prioridade de uma interface do roteador é um valor de 0 a 255, onde 1 é a prioridade padrão e 0 determina quando um roteador não deve ser eleito como DR ou BDR.
+
+Para alterar o valor da prioridade de um roteador devemos executar:
+
+```bash
+interface <interface-name>
+ip ospf priority <priority-value>
+```
+
 ### 📡 Estados de adjacências
 
 | Estado | Descrição | Ações permitidas |
