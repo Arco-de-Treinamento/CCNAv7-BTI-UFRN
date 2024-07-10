@@ -236,3 +236,25 @@ $$
 | 10 Mbps   | 100.000.000               | 10.000.000         | 10       |
 
 > 10 Gbps, 1 Gbps e 100 Mbps possuem o mesmo custo devido a largura da banda de referencia padrão. Esse valor pode ser ajustado manualmente.
+
+### 📡 Customizando o valor de referência
+
+Devido ao valor de referência padrão, todas as interfaces iguais ou superiores a Fast Ethernet terão o mesmo valor de curso. Para determinar o caminho com o custo correto, a largura de banda de referência pode ser alterada para um valor condizente com os equipamentos utilizados:
+
+```bash
+conf t
+router ospf <ospf-id>
+auto-cost reference-bandwidth <bandwidth-value>
+```
+
+>Note que o valor de referência deve estar em Mbps.
+
+#### Modificando diretamente o custo da rota
+
+Ainda é possível modificar o custo OSPF da interface diretamente, possibilitando um maior controle da rota de tráfego.
+
+```bash
+interface <interface-name>
+ip ospf cost <cost-value>
+end
+```
