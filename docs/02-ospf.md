@@ -211,3 +211,17 @@ Cada uma dessas informações pode ser consultada diretamente no roteador com o 
 ```bash
 show ip ospf neighbor
 ```
+
+## 📡 Métricas de Custo do OSPF
+
+O custo de uma rota OSPF é dada pelo valor acumulado de um roteador até à rede de destino. O custo deve ter um valor inteiro e é inversamente proporcional a largura de banda da interface, sendo que a **largura de banda de referência padrão é 10⁸**. 
+
+Podemos calcular o custo da rota OSPF através da fórmula:
+
+$$
+\begin{align*}
+\text{Largura de banda de referência} \\
+\hline
+\text{Largura de banda da interface}\\
+\end{align*}
+$$
