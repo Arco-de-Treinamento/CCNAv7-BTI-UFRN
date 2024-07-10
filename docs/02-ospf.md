@@ -258,3 +258,15 @@ interface <interface-name>
 ip ospf cost <cost-value>
 end
 ```
+
+## 📡 Pacotes Hello e intervalo dead
+
+Os pacotes Hello no OSPFv2 são transmitidos diretamente para o endereço multicast (224.0.0.5) em um intervalo predeterminado. Em um ambiente padrão esse valor de temporização é definido em 10 segundos.
+
+O intervalo de dead, por sua vez, é o tempo que o roteador aguarda receber um pacote Hello antes de definir o vizinho como inativo. Por padrão, nos roteadores Cisco, o intervalo de dead é definido como 4x o valor de Hello e ao término desse intervalo o roteador será removido do LSDB.
+
+Os valores de Hello e Dead podem ser visualizados com o comando:
+
+```bash
+show ip ospf interface <interface-name>
+```
