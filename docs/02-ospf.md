@@ -225,3 +225,14 @@ $$
 \text{Largura de banda da interface}\\
 \end{align*}
 $$
+
+### 📡 Custo padrão do OSPF
+
+| Interface | Banda de referência (bps) | Banda padrão (bps) | Custo    |
+|-----------|---------------------------|------------------- |----------|
+| 10 Gbps   | 100.000.000               | 10.000.000.000     | 0.01 = 1 |
+| 1 Gbps    | 100.000.000               | 1.000.000.000      | 0.1 = 1  |
+| 100 Mbps  | 100.000.000               | 100.000.000        |  1       |
+| 10 Mbps   | 100.000.000               | 10.000.000         | 10       |
+
+> 10 Gbps, 1 Gbps e 100 Mbps possuem o mesmo custo devido a largura da banda de referencia padrão. Esse valor pode ser ajustado manualmente.
