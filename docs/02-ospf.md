@@ -281,3 +281,22 @@ ip ospf hello-interval <hello-value>
 ip ospf dead-interval <dead-value>
 end
 ```
+
+## Definindo uma rota estática
+
+No OSPFv2 rotas estáticas são utilizadas para comunicar pacotes fora da rede OSPF, normalmente utilizada em um roteador de borda (gateway). NO protocolo OSPF um roteador de borda e chamado de ASBR (Autonomous System Limite Router).
+
+Definindo uma rota estática padrão:
+
+```bash
+interface <interface-name>
+ip route <address> <mask>
+exit
+
+ip route <address> <mask> <interface-name>
+router ospf <ospf-id>
+default-information originate
+end
+```
+
+> "default-information originate" instrui o roteador a ser a origem da rota padrão e propagar a rota estática.
