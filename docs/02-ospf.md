@@ -270,3 +270,14 @@ Os valores de Hello e Dead podem ser visualizados com o comando:
 ```bash
 show ip ospf interface <interface-name>
 ```
+
+### Modificando o valor de Hello e Dead
+
+Por definição, os intervalo de Hello e Dead padrão são definidos nas práticas recomendadas e devem ser alteradas apenas se necessário. Para alterar os intervalos dos pacotes Hello e Dead, deve-se executar o comando:
+
+```bash
+interface <interface-name>
+ip ospf hello-interval <hello-value>
+ip ospf dead-interval <dead-value>
+end
+```
