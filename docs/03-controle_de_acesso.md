@@ -102,3 +102,14 @@ ip access-list <acl-name> <extended/standard> <acl-name>
 
 A partir desse ponto é iniciado a ferramente de configuração onde podemos definir as propriedades da ACL.
 
+
+## 🔓 Aplicando ACLs
+
+Após criada e configurada, uma ACL IPv4 deve ser vinculada a uma interface para entrar em vigor. Para adicionar uma ACL  a uma interface deve-se utilizar
+
+```bash
+conf t
+interface <interface-name>
+ip access-group <acl-name/acl-number> <in/out>
+end
+```
