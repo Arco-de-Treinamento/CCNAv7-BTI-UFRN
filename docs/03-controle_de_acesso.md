@@ -113,3 +113,16 @@ interface <interface-name>
 ip access-group <acl-name/acl-number> <in/out>
 end
 ```
+
+## 🗝️ ACLs para acesso administrativo
+
+ACLs também podem ser criadas para proteger o acesso remoto administrativo do dispositivo através da **line vty**. Para isso, basta criar a ACL e aplicar ao equipamento.
+
+```bash
+con t
+line vty 0 4
+login local
+transport input <protocol>
+access-class <acl-name/acl-number> in
+end
+```
