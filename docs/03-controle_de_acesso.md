@@ -37,3 +37,57 @@ Uma ACL IPv4 estendida filtram os pacotes com base no endereço IPv4 de destino,
 conf t
 access-list <acl-number> <permit/deny> <protocol> <ip-address> <wildcard-mask> <packets> <net-protocol>
 ```
+
+#### Propriedades de uma ACL estendida
+
+| Ação executada | Definição                  |
+|----------------|----------------------------|
+| deny           | Specify packets to reject  |
+| permit         | Specify packets to forward |
+| remark         | Access list entry comment  |
+
+| Protocolos     | Definição                           |
+|----------------|-------------------------------------|
+| ahp            | Authentication Header Protocol      |
+| eigrp          | Cisco's EIGRP routing protocol      |
+| esp            | Encapsulation Security Payload      |
+| gre            | Cisco's GRE tunneling               |
+| icmp           | Internet Control Message Protocol   |
+| ip             | Any Internet Protocol               |
+| ospf           | OSPF routing protocol               |
+| tcp            | Transmission Control Protocol       |
+| udp            | User Datagram Protocol              |
+| <0-65535>      | Port number                         |
+| ftp            | File Transfer Protocol (21)         |
+| pop3           | Post Office Protocol v3 (110)       |
+| smtp           | Simple Mail Transport Protocol (25) |
+| telnet         | Telnet (23)                         |
+| www            | World Wide Web (HTTP, 80)           |
+
+| Endereço | Definição                                       |
+|----------|-------------------------------------------------|
+| A.B.C.D  | Destination address                             |
+| any      | Any destination host                            |
+| eq       | Match only packets on a given port number       |
+| gt       | Match only packets with a greater port number   |
+| host     | A single destination host                       |
+| lt       | Match only packets with a lower port number     |
+| neq      | Match only packets not on a given port number   |
+| range    | Match only packets in the range of port numbers |
+
+### 🔢 ACLs numeradas
+
+Uma ACL numerada tem uma faixa de atuação segundo o ID recebido:
+
+| ID          | Area de atuação                          |
+|-------------|------------------------------------------|
+| <1-99>      | IP standard access list                  |
+| <100-199>   | IP extended access list                  |
+| <1100-1199> | Extended 48-bit MAC address access list  |
+| <1300-1999> | IP standard access list (expanded range) |
+| <200-299>   | Protocol type-code access list           |
+| <2000-2699> | IP extended access list (expanded range) |
+| <700-799>   | 48-bit MAC address access list           |
+| rate-limit  | Simple rate-limit specific access list   |
+| template    | Enable IP template acls                  |
+
