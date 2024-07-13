@@ -91,3 +91,14 @@ Uma ACL numerada tem uma faixa de atuação segundo o ID recebido:
 | rate-limit  | Simple rate-limit specific access list   |
 | template    | Enable IP template acls                  |
 
+### ACLs nomeadas
+
+As ACLs podem ser nomeadas para trazer informações sobre a sua finalidade. Para criar ACLs nomeadas é utilizado o comando **`ip access-list`**, com a seguinte sintaxe:
+
+```bash
+conf t
+ip access-list <acl-name> <extended/standard> <acl-name>
+```
+
+A partir desse ponto é iniciado a ferramente de configuração onde podemos definir as propriedades da ACL.
+
