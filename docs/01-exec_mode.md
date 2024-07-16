@@ -11,3 +11,4 @@ As configurações do [IOS (Internetwork Operating System®)](https://www.cisco.
 | (config-router)# | Modo de configuração de roteador  | router [protocolo]   |
 
 > Em qualquer um dos modos, para consultar a tabela de aplicações disponíveis, ensira o comando '?'
+
