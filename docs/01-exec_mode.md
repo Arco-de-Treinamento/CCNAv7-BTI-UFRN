@@ -12,3 +12,10 @@ As configurações do [IOS (Internetwork Operating System®)](https://www.cisco.
 
 > Em qualquer um dos modos, para consultar a tabela de aplicações disponíveis, ensira o comando '?'
 
+## 🏷️ Extra - Hostname
+
+O uso de um hostname permite identificar uma unidade de rede com maior facilidade. Para utilizar um hostname, deve-se utilizar:
+
+```bash
+hostname <hostname>
+```
