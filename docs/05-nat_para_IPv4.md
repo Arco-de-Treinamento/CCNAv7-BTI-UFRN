@@ -8,6 +8,36 @@ O NAT estático é um NAT que converte o endereço de rede privado em endereço 
 
 No uso do NAT estático deve-se garantir que existem endereços públicos suficientes para todas as aplicações.
 
+### Criando um mapeamento de endereços
+
+Ao utilizar convenções estáticas, o primeiro passo é criar um mapeamento entre o **endereço local interno** e o **endereço global interno**. Esse procedimento pode ser feito com:
+
+```bash
+ip nat inside source static <inside-local-address> <inside-global-address>
+```
+
+### Configurando as interfaces
+
+Com o mapeamento criado, agora resta identificar as interfaces que estão participando da configuração do mapeamento de entrada e saída.
+
+Nesse caso, para a interface de entrada, deve-se utilizar:
+
+```bash
+interface <interface-name>
+ip address <inside-address> <inside-mask>
+ip nat inside
+exit
+```
+
+E para interface de saída do NAT, será utilizado:
+
+```bash
+interface <interface-name>
+ip address <outside-address> <outside-mask>
+ip nat outside
+exit
+```
+
 ## NAT dinâmico
 
 O NAT dinâmico, por sua vez, utiliza um pool de endereços públicos e os atribui a endereços privados conforme a necessidade a partir de uma ordem de chegada. No NAT dinâmico os dispositivos não se apresentam para a rede externa necessariamente com o mesmo IP.
