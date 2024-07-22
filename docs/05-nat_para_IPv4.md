@@ -78,7 +78,23 @@ ip nat inside source list <acl-number> pool <POOL-NAME>
 
 > Com toda a configuração do NAT dinamico criada, devemos identificar as interfaces utilizadas para **inside** e **outside** na rede, assim como no NAT estático.
 
-### PAT - Sobrecarga de NAT
+### Limpando as entradas do NAT dinâmico
+
+Por padrão, as entradas da tradução do NAT dinâmico são limpas e resetadas a cada 24h, a menos que esse processo seja feito manualmente, ou precise ser reconfigurado.
+
+Para limpar as entradas do NAT dinâmico manualmente, deve-se utilizar:
+
+```bash
+clear ip nat translation *
+```
+
+Caso seja necessário reconfigurar o tempo limite do NAT dinâmico:
+
+```bash
+ip nat translation timeout <timeout-seconds>
+```
+
+## PAT - Sobrecarga de NAT
 
 Utiliza as portas TCP e UDP para sobrecarregar os endereços do pool de IPs públicos do NAT. Desse modo, vários dispositivos diferentes podem se conectar a rede por um mesmo IP externo.
 
