@@ -38,6 +38,14 @@ ip nat outside
 exit
 ```
 
+### Visualizando o NAT estático
+
+Visualizando a configuração do NAT estático:
+
+```bash
+show ip nat translations
+```
+
 ## NAT dinâmico
 
 O NAT dinâmico, por sua vez, utiliza um pool de endereços públicos e os atribui a endereços privados conforme a necessidade a partir de uma ordem de chegada. No NAT dinâmico os dispositivos não se apresentam para a rede externa necessariamente com o mesmo IP.
