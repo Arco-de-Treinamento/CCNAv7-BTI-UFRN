@@ -52,6 +52,32 @@ O NAT dinâmico, por sua vez, utiliza um pool de endereços públicos e os atrib
 
 É necessário fornecer IPs públicos suficientes para que o NAT possa suprir a carga da rede.
 
+### Criando um pool de endereços
+
+O pool de endereços é tipicamente um grupo de endereços públicos que serão utilizados na criação do NAT dinâmico. O pool de endereços pode ser definido como:
+
+```bash
+ip nat pool <POOL-NAME> <start-address> <end-address> netmask <mask>
+```
+
+### Criando uma ACL para a tradução
+
+Para utilizar o NAT dinâmico, deve-se criar uma ACL que permita apenas a tradução de alguns endereços predefinidos para manter a segurança da rede. Esse procedimento pode ser feito com:
+
+```bash
+conf t
+access-list <acl-number> permit <ip-address> <mask>
+```
+
+Com a ACL criada, agora devemos vinculá-la ao pool de endereços.
+
+```bash
+conf t 
+ip nat inside source list <acl-number> pool <POOL-NAME>
+```
+
+> Com toda a configuração do NAT dinamico criada, devemos identificar as interfaces utilizadas para **inside** e **outside** na rede, assim como no NAT estático.
+
 ### PAT - Sobrecarga de NAT
 
 Utiliza as portas TCP e UDP para sobrecarregar os endereços do pool de IPs públicos do NAT. Desse modo, vários dispositivos diferentes podem se conectar a rede por um mesmo IP externo.
