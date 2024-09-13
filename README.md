@@ -7,7 +7,6 @@
 
 <p align ="center">
 <a href= "#sobre-este-projeto">👨🏻‍💻 Sobre este projeto</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="#leitura">📚 Leitura e links recomendados</a> &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
 <a href="#licenca">📝 Licença</a>
 </p>
 
@@ -17,12 +16,6 @@
 Este repositório está destinado ao armazenamento de resoluções dos exercícios e anotações executadas durante o curso do **CCNA 3**, ministrado dentro do Bacharelado em Tecnologia da Informação e ofertado pela UFRN - IMD.
 <hr>
 
-
-<h2 id="leitura">📚 Leitura e links recomendados</h2>
-
-* [Shishin no Ken](https://dragonball.fandom.com/wiki/Multi-Form)
-
-<hr>
 
 <h2 id="licenca">📝 Licença</h2>
 
