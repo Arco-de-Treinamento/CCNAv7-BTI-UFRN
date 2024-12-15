@@ -13,7 +13,8 @@
 <hr>
 
 <h2 id = "sobre-este-projeto">👨🏻‍💻 Sobre este projeto</h2>
-Este repositório está destinado ao armazenamento de resoluções dos exercícios e anotações executadas durante o curso do **CCNA 3**, ministrado dentro do Bacharelado em Tecnologia da Informação e ofertado pela UFRN - IMD.
+
+Este repositório está destinado ao armazenamento de resoluções dos exercícios e anotações executadas durante o curso do **CCNA** , ministrado dentro do Bacharelado em Tecnologia da Informação e ofertado pela UFRN - IMD.
 <hr>
 
 
