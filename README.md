@@ -1,7 +1,7 @@
 <h1 align = "center">
   CCNAv7: Enterprise Networking, Security, and Automation
-    <img src="https://img.shields.io/github/last-commit/Arco-de-Treinamento/CCNA3-2024.1-BTI-UFRN">
-    <img src="https://img.shields.io/github/license/Arco-de-Treinamento/CCNA3-2024.1-BTI-UFRN">
+    <img src="https://img.shields.io/github/last-commit/Arco-de-Treinamento/CCNAv7-BTI-UFRN">
+    <img src="https://img.shields.io/github/license/Arco-de-Treinamento/CCNAv7-BTI-UFRN">
   </p>
 </h1>
 
